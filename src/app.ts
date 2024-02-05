@@ -11,7 +11,6 @@ app.use(express.urlencoded({ extended: true }))
 
 //testing route
 app.get('/', (req: Request, res: Response) => {
-  ff
   res.send('working successfully')
 })
 
