@@ -1,6 +1,7 @@
 import express, { Application, NextFunction, Request, Response } from 'express'
 import cors from 'cors'
-import usersRouters from './app/modules/user/users.route'
+import { UserRoutes } from './app/modules/user/user.route'
+import ErrorHandler from './middlewares/globalErrorHandler'
 
 const app: Application = express()
 
@@ -9,9 +10,10 @@ app.use(cors())
 //parser
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+// console.log(app.get('env'))
 
 //application routers
-app.use('/api/v1/users', usersRouters)
+app.use('/api/v1/users', UserRoutes)
 
 app.get('/', async (req: Request, res: Response, next: NextFunction) => {
   try {
@@ -21,13 +23,20 @@ app.get('/', async (req: Request, res: Response, next: NextFunction) => {
   }
 })
 
+//test
+// app.get('/test', async (req: Request, res: Response, next: NextFunction) => {
+//   Promise.reject(new Error('unhandled promise rejection'))
+//   // res.send(`unexpected error`)
+// })
+
 // rout not defiant
-app.all('*', (req, res, next) => {
+app.all('*', (req: Request, res: Response, next: NextFunction) => {
   const err = new Error(`Can not find ${req.originalUrl} on the server`)
-  // err.status = "fail";
-  // err.statusCode = 404;
 
   next(err)
 })
+
+//middlewares
+app.use(ErrorHandler)
 
 export default app
