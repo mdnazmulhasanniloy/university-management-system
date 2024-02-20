@@ -22,8 +22,8 @@ const createUser = async (user: IUser): Promise<IUser | null> => {
     }
     return createdUser
   } catch (error) {
-    throw new ApiError(400, 'Failed to create User!')
+    throw new Error(error)
   }
 }
 
-export default { createUser }
+export const UserService = { createUser }
