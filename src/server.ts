@@ -16,19 +16,6 @@ async function main() {
     errorLogger.error(`failed to connect database`, error)
   }
 
-  // process.on('unhandledRejection', error => {
-  //   console.log(`Unhandled rejection detected: ${error}`)
-
-  //   // Log the error before attempting to close the server
-  //   errorLogger.error(error)
-
-  //   // Close the server gracefully
-  //   server.close(() => {
-  //     console.log('Server closed')
-  //     process.exit(1)
-  //   })
-  // })
-
   //unhandled Rejection detected
   process.on('unhandledRejection', error => {
     console.log(`Unhandled rejection detected: ${error}`)
