@@ -1,35 +1,60 @@
 {
-  "keep": {
-    "days": true,
-    "amount": 14
-  },
-  "auditLog": "E:\\university-management-system\\logs\\winston\\successes\\.59b5339330c1ff0dee5adfda5ad37c812216782d-audit.json",
-  "files": [
-    {
-      "date": 1707635377143,
-      "name": "E:\\university-management-system\\logs\\winston\\successes\\UMS-2024-11-02-13-success.log",
-      "hash": "974fe71802012ac11962b2ba8ed8786efb2b397e648eeb76c5417fbbb73ea9ba"
+    "keep": {
+        "days": true,
+        "amount": 14
     },
-    {
-      "date": 1708414290251,
-      "name": "E:\\university-management-system\\logs\\winston\\successes\\UMS-2024-20-02-13-success.log",
-      "hash": "3d6bbb671791a2488052c2acfb3edfe3b6f08a07203c7cadd3c7253a621e300b"
-    },
-    {
-      "date": 1708446059202,
-      "name": "E:\\university-management-system\\logs\\winston\\successes\\UMS-2024-20-02-22-success.log",
-      "hash": "af00db89447ea1b6993c34f76bffed282d09aa55cd02e9661fd12457f7972f45"
-    },
-    {
-      "date": 1708448403379,
-      "name": "E:\\university-management-system\\logs\\winston\\successes\\UMS-2024-20-02-23-success.log",
-      "hash": "d65673aed0ea7a13a96af511fc63c354b441f4d47a296401c34315341bc63f9e"
-    },
-    {
-      "date": 1708452043497,
-      "name": "E:\\university-management-system\\logs\\winston\\successes\\UMS-2024-21-02-00-success.log",
-      "hash": "b1fa19c8d7fa7578e5530b9e51e9057250db3c53cf5bf7f31e38b7b6fc85097c"
-    }
-  ],
-  "hashType": "sha256"
+    "auditLog": "E:\\university-management-system\\logs\\winston\\successes\\.59b5339330c1ff0dee5adfda5ad37c812216782d-audit.json",
+    "files": [
+        {
+            "date": 1707635377143,
+            "name": "E:\\university-management-system\\logs\\winston\\successes\\UMS-2024-11-02-13-success.log",
+            "hash": "974fe71802012ac11962b2ba8ed8786efb2b397e648eeb76c5417fbbb73ea9ba"
+        },
+        {
+            "date": 1708414290251,
+            "name": "E:\\university-management-system\\logs\\winston\\successes\\UMS-2024-20-02-13-success.log",
+            "hash": "3d6bbb671791a2488052c2acfb3edfe3b6f08a07203c7cadd3c7253a621e300b"
+        },
+        {
+            "date": 1708446059202,
+            "name": "E:\\university-management-system\\logs\\winston\\successes\\UMS-2024-20-02-22-success.log",
+            "hash": "af00db89447ea1b6993c34f76bffed282d09aa55cd02e9661fd12457f7972f45"
+        },
+        {
+            "date": 1708448403379,
+            "name": "E:\\university-management-system\\logs\\winston\\successes\\UMS-2024-20-02-23-success.log",
+            "hash": "d65673aed0ea7a13a96af511fc63c354b441f4d47a296401c34315341bc63f9e"
+        },
+        {
+            "date": 1708452043497,
+            "name": "E:\\university-management-system\\logs\\winston\\successes\\UMS-2024-21-02-00-success.log",
+            "hash": "b1fa19c8d7fa7578e5530b9e51e9057250db3c53cf5bf7f31e38b7b6fc85097c"
+        },
+        {
+            "date": 1708489961370,
+            "name": "E:\\university-management-system\\logs\\winston\\successes\\UMS-2024-21-02-10-success.log",
+            "hash": "1bdc4cf41843a50135259956a864cd6309adb7d08b19fde49fa6be2afbed1a8f"
+        },
+        {
+            "date": 1708491616181,
+            "name": "E:\\university-management-system\\logs\\winston\\successes\\UMS-2024-21-02-11-success.log",
+            "hash": "0e3ce64fcfcb68f7cf0afa4a30af352f451f149df237bb8372d71698ddfb13f9"
+        },
+        {
+            "date": 1708503112715,
+            "name": "E:\\university-management-system\\logs\\winston\\successes\\UMS-2024-21-02-14-success.log",
+            "hash": "3e35d03e1d8d678f68cc94fab561f28ad4da3bf6b9c08f5db06a6a5ec2713c4e"
+        },
+        {
+            "date": 1708506081311,
+            "name": "E:\\university-management-system\\logs\\winston\\successes\\UMS-2024-21-02-15-success.log",
+            "hash": "13d63f0da9a0d09d8a64b48705d24fa74c6da76fb66ba42aefe6012a98db8121"
+        },
+        {
+            "date": 1708509682382,
+            "name": "E:\\university-management-system\\logs\\winston\\successes\\UMS-2024-21-02-16-success.log",
+            "hash": "8bc37c98a008de634923caa7264ed721b5ac5912547f198ea9935eacdded67ed"
+        }
+    ],
+    "hashType": "sha256"
 }

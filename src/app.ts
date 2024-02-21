@@ -24,10 +24,15 @@ app.get('/', async (req: Request, res: Response, next: NextFunction) => {
 })
 
 //test
-// app.get('/test', async (req: Request, res: Response, next: NextFunction) => {
-//   Promise.reject(new Error('unhandled promise rejection'))
-//   // res.send(`unexpected error`)
-// })
+app.get('/test', (req: Request, res: Response, next: NextFunction) => {
+  try {
+    res.send(`simple UMS server is running`)
+  } catch (error) {
+    next(error)
+  }
+  // console.log(object)
+  // res.send(`unexpected error`)
+})
 
 // rout not defiant
 app.all('*', (req: Request, res: Response, next: NextFunction) => {
