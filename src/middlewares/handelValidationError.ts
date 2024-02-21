@@ -7,23 +7,23 @@ const HandleValidationError = (
 ): IGenericErrorResponse => {
   const errors: IGenericErrorMessage[] = Object.values(err.errors).map(
     (el: mongoose.Error.ValidatorError | mongoose.Error.CastError) => {
+      console.log(`${el.path}`.red)
       return {
         path: el?.path,
         message: el?.message,
       }
     },
   )
-
   const statusCode = 400
   // Create an IGenericErrorResponse with an array of error messages
-  const response: IGenericErrorResponse = {
+  // const response: IGenericErrorResponse =
+
+  // Do something with the response object, or return it if needed
+  return {
     statusCode,
     message: 'Validation Error',
     errorMessages: errors,
   }
-
-  // Do something with the response object, or return it if needed
-  return response
 }
 
 export default HandleValidationError

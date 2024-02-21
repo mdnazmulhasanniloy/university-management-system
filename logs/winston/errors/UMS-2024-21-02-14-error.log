@@ -1,0 +1,111 @@
+{February 21st 2024, 2:14:12 pm } [PH] error failed to connect database querySrv ETIMEOUT _mongodb._tcp.cluster0.pyj8wdj.mongodb.net 
+{February 21st 2024, 2:49:20 pm } [PH] error global error handler ~  createUserZodSchema is not defined 
+{February 21st 2024, 2:50:04 pm } [PH] error global error handler ~  ValidationError: role: Path `role` is required. 
+{February 21st 2024, 2:50:30 pm } [PH] error global error handler ~  [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "role"
+    ],
+    "message": "role is required"
+  }
+] 
+{February 21st 2024, 2:53:50 pm } [PH] error global error handler ~  [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "role"
+    ],
+    "message": "role is required"
+  }
+] 
+{February 21st 2024, 2:54:33 pm } [PH] error global error handler ~  [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "role"
+    ],
+    "message": "role is required"
+  }
+] 
+{February 21st 2024, 2:55:41 pm } [PH] error global error handler ~  [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "role"
+    ],
+    "message": "role is required"
+  }
+] 
+{February 21st 2024, 2:56:25 pm } [PH] error global error handler ~  [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "role"
+    ],
+    "message": "role is required"
+  }
+] 
+{February 21st 2024, 2:56:42 pm } [PH] error global error handler ~  [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "role"
+    ],
+    "message": "role is required"
+  }
+] 
+{February 21st 2024, 2:57:10 pm } [PH] error global error handler ~  [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "role"
+    ],
+    "message": "role is required"
+  }
+] 
+{February 21st 2024, 2:57:29 pm } [PH] error global error handler ~  [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "role"
+    ],
+    "message": "role is required"
+  }
+] 
+{February 21st 2024, 2:58:06 pm } [PH] error global error handler ~  [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "role"
+    ],
+    "message": "role is required"
+  }
+] 

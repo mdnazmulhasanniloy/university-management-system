@@ -1,0 +1,15 @@
+{February 21st 2024, 10:40:28 am } [PH] error global error handler ~  [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "undefined",
+    "path": [
+      "body",
+      "role"
+    ],
+    "message": "role is required"
+  }
+] 
+{February 21st 2024, 10:49:40 am } [PH] error global error handler ~  object is not defined 
+{February 21st 2024, 10:53:59 am } [PH] error global error handler ~  object is not defined 
+{February 21st 2024, 10:54:23 am } [PH] error global error handler ~  object is not defined 
