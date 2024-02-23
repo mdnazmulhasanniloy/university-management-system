@@ -6,9 +6,9 @@
     "auditLog": "E:\\university-management-system\\logs\\winston\\errors\\.5a1cb2f37fb18553c54a1e122e5abf12b846a950-audit.json",
     "files": [
         {
-            "date": 1708710561177,
-            "name": "E:\\university-management-system\\logs\\winston\\errors\\UMS-2024-23-02-23-error.log",
-            "hash": "8a2238d1fb93d0407f3a2fe60757cd0fc59b5170fa14ff9b6b59d5c67b32a9d6"
+            "date": 1708713375776,
+            "name": "E:\\university-management-system\\logs\\winston\\errors\\UMS-2024-24-02-00-error.log",
+            "hash": "a4aa8f9a657d486d272effa1c7541d8601fde4cd6e97f74ab3c7f93a7aa913c2"
         }
     ],
     "hashType": "sha256"
