@@ -1,8 +1,8 @@
-import { createLogger, format, transports } from 'winston'
-import config from '../config'
-import path from 'path'
-import moment from 'moment'
-import DailyRotateFile from 'winston-daily-rotate-file'
+import { createLogger, format, transports } from 'winston';
+import config from '../config';
+import path from 'path';
+import moment from 'moment';
+import DailyRotateFile from 'winston-daily-rotate-file';
 
 const {
   combine,
@@ -10,14 +10,14 @@ const {
   label,
   printf,
   // prettyPrint
-} = format
+} = format;
 
 // custom logger format
 
 const myFormat = printf(({ level, message, label, timestamp }): string => {
-  const time = moment(timestamp).format('MMMM Do YYYY, h:mm:ss a')
-  return `{${time} } [${label}] ${level} ${message} `
-})
+  const time = moment(timestamp).format('MMMM Do YYYY, h:mm:ss a');
+  return `{${time} } [${label}] ${level} ${message} `;
+});
 
 const logger = createLogger({
   level: 'info',
@@ -42,7 +42,7 @@ const logger = createLogger({
       maxFiles: '14d',
     }),
   ],
-})
+});
 
 const errorLogger = createLogger({
   level: 'error',
@@ -67,7 +67,7 @@ const errorLogger = createLogger({
       maxFiles: '1d',
     }),
   ],
-})
+});
 
 if (config?.nod_env !== 'production') {
   logger.add(
@@ -79,7 +79,7 @@ if (config?.nod_env !== 'production') {
         // prettyPrint(),
       ),
     }),
-  )
+  );
 }
 
-export { logger, errorLogger }
+export { logger, errorLogger };
