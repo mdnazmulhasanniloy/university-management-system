@@ -1,20 +1,20 @@
 {
-    "keep": {
-        "days": true,
-        "amount": 1
+  "keep": {
+    "days": true,
+    "amount": 1
+  },
+  "auditLog": "E:\\university-management-system\\logs\\winston\\errors\\.5a1cb2f37fb18553c54a1e122e5abf12b846a950-audit.json",
+  "files": [
+    {
+      "date": 1708710561177,
+      "name": "E:\\university-management-system\\logs\\winston\\errors\\UMS-2024-23-02-23-error.log",
+      "hash": "8a2238d1fb93d0407f3a2fe60757cd0fc59b5170fa14ff9b6b59d5c67b32a9d6"
     },
-    "auditLog": "E:\\university-management-system\\logs\\winston\\errors\\.5a1cb2f37fb18553c54a1e122e5abf12b846a950-audit.json",
-    "files": [
-        {
-            "date": 1708710561177,
-            "name": "E:\\university-management-system\\logs\\winston\\errors\\UMS-2024-23-02-23-error.log",
-            "hash": "8a2238d1fb93d0407f3a2fe60757cd0fc59b5170fa14ff9b6b59d5c67b32a9d6"
-        },
-        {
-            "date": 1708711247128,
-            "name": "E:\\university-management-system\\logs\\winston\\errors\\UMS-2024-24-02-00-error.log",
-            "hash": "644203e40f58f6ff224b9fde13311ddc00e668b1cc12320d8f056d99bc914123"
-        }
-    ],
-    "hashType": "sha256"
+    {
+      "date": 1708711247128,
+      "name": "E:\\university-management-system\\logs\\winston\\errors\\UMS-2024-24-02-00-error.log",
+      "hash": "644203e40f58f6ff224b9fde13311ddc00e668b1cc12320d8f056d99bc914123"
+    }
+  ],
+  "hashType": "sha256"
 }
