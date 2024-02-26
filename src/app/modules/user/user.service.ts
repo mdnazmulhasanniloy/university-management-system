@@ -28,6 +28,12 @@ const createUser = async (user: IUser): Promise<IUser | null> => {
   return createdUser;
 };
 
+const getUsers = async (): Promise<IUser | null> => {
+  const users = await User.find();
+  return users;
+};
+
 export const UserService = {
   createUser,
+  getUsers,
 };

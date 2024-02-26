@@ -14,6 +14,26 @@
             "date": 1708924590038,
             "name": "E:\\university-management-system\\logs\\winston\\errors\\UMS-2024-26-02-11-error.log",
             "hash": "de8a8bb0c16fa2ecc58b8543933525a960a1c10614393aa2d42c40566f6ac936"
+        },
+        {
+            "date": 1708931177923,
+            "name": "E:\\university-management-system\\logs\\winston\\errors\\UMS-2024-26-02-13-error.log",
+            "hash": "2737fc5b7fdee07abc0c9d812d060533ba8abd8146141283184d20596bc92c13"
+        },
+        {
+            "date": 1708934431206,
+            "name": "E:\\university-management-system\\logs\\winston\\errors\\UMS-2024-26-02-14-error.log",
+            "hash": "34cfad4a66a1488a9b3793a307ea9979a5e984c6c6e4f003706af368d6736d7c"
+        },
+        {
+            "date": 1708964755426,
+            "name": "E:\\university-management-system\\logs\\winston\\errors\\UMS-2024-26-02-22-error.log",
+            "hash": "0ec25410fb05363c38dd6f6bbf3013adba02e210a58a69e8d092c1f072ee2800"
+        },
+        {
+            "date": 1708967466891,
+            "name": "E:\\university-management-system\\logs\\winston\\errors\\UMS-2024-26-02-23-error.log",
+            "hash": "3492f32a82f7db2481f78931efb379b670bcfc887d66f9ef10f27763b2fcb809"
         }
     ],
     "hashType": "sha256"
