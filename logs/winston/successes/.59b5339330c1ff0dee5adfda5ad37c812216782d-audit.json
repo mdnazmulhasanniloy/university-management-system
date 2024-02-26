@@ -9,6 +9,16 @@
             "date": 1708713375773,
             "name": "E:\\university-management-system\\logs\\winston\\successes\\UMS-2024-24-02-00-success.log",
             "hash": "48a5ace021ad97f4ed2b4e980339da7b2b78c2c8e20a9491dd178bfbb3aa09bb"
+        },
+        {
+            "date": 1708923383334,
+            "name": "E:\\university-management-system\\logs\\winston\\successes\\UMS-2024-26-02-10-success.log",
+            "hash": "6b873ee4670f66a152d326cda3a0a6461138bd02c76f39f2064104a4e9ac36a1"
+        },
+        {
+            "date": 1708924590035,
+            "name": "E:\\university-management-system\\logs\\winston\\successes\\UMS-2024-26-02-11-success.log",
+            "hash": "2a758f90f804ad3996944c5451b3bc1f7caf889de6ea84e74d8b235600fd9d25"
         }
     ],
     "hashType": "sha256"
