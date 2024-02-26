@@ -2,6 +2,7 @@ import express, { Application, NextFunction, Request, Response } from 'express';
 import cors from 'cors';
 import ErrorHandler from './middlewares/globalErrorHandler';
 import routes from './app/routs';
+import httpStatus from 'http-status';
 
 const app: Application = express();
 
@@ -30,14 +31,28 @@ app.get('/test', async (req: Request, res: Response, next: NextFunction) => {
   }
 });
 
-// rout not defiant
-app.all('*', (req: Request, res: Response, next: NextFunction) => {
-  const err = new Error(`Can not find ${req.originalUrl} on the server`);
-
-  next(err);
-});
+// app.all('*', (req: Request, res: Response, next: NextFunction) => {
+//   throw new ApiError(404, ``);
+// });
 
 //middlewares
 app.use(ErrorHandler);
+
+// rout not found!
+
+app.use((req: Request, res: Response, next: NextFunction) => {
+  res.status(httpStatus.NOT_FOUND).json({
+    status: httpStatus.NOT_FOUND,
+    success: false,
+    message: 'Not Found!',
+    errorMessages: [
+      {
+        path: req?.originalUrl,
+        message: `Api not found!`,
+      },
+    ],
+  });
+  next();
+});
 
 export default app;

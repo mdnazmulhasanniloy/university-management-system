@@ -13,7 +13,6 @@ const semesterCreate = CatchAsync(
     if (!result) {
       throw new ApiError(400, 'academic semester creation failed');
     }
-    next();
 
     sendResponse(res, {
       statusCode: httpStatus.OK,
@@ -21,6 +20,8 @@ const semesterCreate = CatchAsync(
       message: 'academic semester created successfully!',
       data: result,
     });
+
+    next();
   },
 );
 
