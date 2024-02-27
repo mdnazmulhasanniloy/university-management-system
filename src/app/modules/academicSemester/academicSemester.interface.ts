@@ -19,7 +19,7 @@ export type IAcademicSemesterCode = '01' | '02' | '03';
 
 export type IAcademicSemester = {
   title: IAcademicSemesterTitle;
-  year: number;
+  year: string;
   code: IAcademicSemesterCode;
   startMonth: IAcademicSemesterMonth;
   endMonth: IAcademicSemesterMonth;
@@ -33,3 +33,12 @@ export type IPaginationOption = {
   sortBy?: string;
   sortOrder?: 'asc' | 'desc';
 };
+
+export type IAcademicSemesterFilter = {
+  searchTerm: string;
+};
+
+// interface IAcademicSemesterFilter {
+//   searchTerm?: string;
+//   [key: string]: any;
+// }

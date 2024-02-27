@@ -39,6 +39,21 @@
             "date": 1708967483287,
             "name": "E:\\university-management-system\\logs\\winston\\successes\\UMS-2024-26-02-23-success.log",
             "hash": "1abf43ccefa0d5fc1033922ef5012a570ad40177a1c046061833d0f97eafe92d"
+        },
+        {
+            "date": 1709014791248,
+            "name": "E:\\university-management-system\\logs\\winston\\successes\\UMS-2024-27-02-12-success.log",
+            "hash": "e0b5f5128839e5512e009779da2e661576f96fa649220f29076c99d9c34bb264"
+        },
+        {
+            "date": 1709017600114,
+            "name": "E:\\university-management-system\\logs\\winston\\successes\\UMS-2024-27-02-13-success.log",
+            "hash": "9e944fff817a972f625fb903cd816b2235e7017789e08693b46f05cda4f17a74"
+        },
+        {
+            "date": 1709020885575,
+            "name": "E:\\university-management-system\\logs\\winston\\successes\\UMS-2024-27-02-14-success.log",
+            "hash": "1165d30133830098ff6b7e38ec531b71064f0d23ea0c433009fba7a8e9ad4fa2"
         }
     ],
     "hashType": "sha256"
