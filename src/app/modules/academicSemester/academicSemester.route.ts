@@ -5,18 +5,12 @@ import { AcademicSemesterController } from './academicSemester.controller';
 
 const router = express.Router();
 
-router
-  .get('/get-semester', AcademicSemesterController.getAllSemesters)
-  .post(
-    '/create-semester',
-    validateRequest(academicSemesterValidation.academicSemesterZodSchema),
-    AcademicSemesterController?.semesterCreate,
-  );
-
-// router.post(
-//   '/create-user',
-//   validateRequest(userValidation.createUserZodSchema),
-//   UserController?.createUser,
-// )
+router.post(
+  '/create-semester',
+  validateRequest(academicSemesterValidation.academicSemesterZodSchema),
+  AcademicSemesterController?.semesterCreate,
+);
+router.get('/', AcademicSemesterController.getAllSemesters);
+router.get('/:id', AcademicSemesterController.getSemesterById);
 
 export const AcademicSemesterRoutes = router;

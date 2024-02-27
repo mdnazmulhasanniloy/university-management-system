@@ -29,6 +29,11 @@
             "date": 1709020885578,
             "name": "E:\\university-management-system\\logs\\winston\\errors\\UMS-2024-27-02-14-error.log",
             "hash": "4f3a9ba7996a24d211504338d271f30e2069b2e4241071753d4fc99a939251db"
+        },
+        {
+            "date": 1709024476567,
+            "name": "E:\\university-management-system\\logs\\winston\\errors\\UMS-2024-27-02-15-error.log",
+            "hash": "0bfd06db1af015171d3408042651206132159c36931a1fb16746b63c608103b8"
         }
     ],
     "hashType": "sha256"

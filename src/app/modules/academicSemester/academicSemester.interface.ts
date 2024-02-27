@@ -35,7 +35,9 @@ export type IPaginationOption = {
 };
 
 export type IAcademicSemesterFilter = {
-  searchTerm: string;
+  searchTerm?: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [key: string]: any;
 };
 
 // interface IAcademicSemesterFilter {

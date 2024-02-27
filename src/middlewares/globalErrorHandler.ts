@@ -5,6 +5,7 @@ import config from '../config';
 import HandleValidationError from '../errors/handelValidationError';
 import { ZodError } from 'zod';
 import handleZodError from '../errors/handleZodError';
+import handleCastError from '../errors/handleCastError';
 // import { errorLogger } from '../shared/logger'
 
 // ErrorHandler.js
@@ -32,6 +33,11 @@ const ErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
       const simplifiedError = handleZodError(error);
       statusCode = simplifiedError?.statusCode;
       message = simplifiedError?.message || 'Validation Error';
+      errorMessages = simplifiedError?.errorMessages;
+    } else if (error.name === 'CastError') {
+      const simplifiedError = handleCastError(error);
+      statusCode = simplifiedError?.statusCode;
+      message = simplifiedError?.message || 'Cast Error';
       errorMessages = simplifiedError?.errorMessages;
     } else if (error instanceof ApiError) {
       statusCode = error.statusCode | 500;

@@ -9,6 +9,7 @@ import {
 import { AcademicSemester } from './academicSemester.models';
 import { academicSemesterSearchableFields } from './academicSemesterConstant';
 
+//create a new semester
 const createSemester = async (
   data: IAcademicSemester,
 ): Promise<IAcademicSemester | null> => {
@@ -16,6 +17,7 @@ const createSemester = async (
   return createdUser;
 };
 
+//get all semester
 const getAllSemesters = async (
   filters: IAcademicSemesterFilter,
   paginationOptions: IPaginationOption,
@@ -66,4 +68,16 @@ const getAllSemesters = async (
     data: result,
   };
 };
-export const AcademicSemesterService = { createSemester, getAllSemesters };
+
+//get semester by id
+const getSemesterById = async (
+  id: string,
+): Promise<IAcademicSemester | null> => {
+  const result = await AcademicSemester.findById(id);
+  return result;
+};
+export const AcademicSemesterService = {
+  createSemester,
+  getAllSemesters,
+  getSemesterById,
+};
