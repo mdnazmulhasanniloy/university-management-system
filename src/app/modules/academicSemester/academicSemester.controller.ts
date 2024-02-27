@@ -6,7 +6,11 @@ import sendResponse from '../../../shared/sendResponse';
 import httpStatus from 'http-status';
 import pick from '../../../shared/pick';
 import { paginationFields } from '../../../constants/pagination';
-import { IAcademicSemester } from './academicSemester.interface';
+import {
+  IAcademicSemester,
+  // IAcademicSemesterFilter,
+} from './academicSemester.interface';
+import { academicSemesterFilterableFields } from './academicSemesterConstant';
 
 const semesterCreate = CatchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
@@ -28,12 +32,16 @@ const semesterCreate = CatchAsync(
   },
 );
 
+//get all semester
 const getAllSemesters = CatchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
+    const filters = pick(req.query, academicSemesterFilterableFields);
     const paginationOptions = pick(req.query, paginationFields);
 
-    const result =
-      await AcademicSemesterService.getAllSemesters(paginationOptions);
+    const result = await AcademicSemesterService.getAllSemesters(
+      filters,
+      paginationOptions,
+    );
 
     if (!result) {
       throw new ApiError(400, 'semester not found!');
@@ -46,7 +54,14 @@ const getAllSemesters = CatchAsync(
       meta: result.meta,
       data: result.data,
     });
+    next();
+  },
+);
 
+const getSemester = CatchAsync(
+  async (req: Request, res: Response, next: NextFunction) => {
+    const id = pick(req.params, ['id']);
+    console.log(id);
     next();
   },
 );
@@ -81,4 +96,5 @@ const getAllSemesters = CatchAsync(
 export const AcademicSemesterController = {
   semesterCreate,
   getAllSemesters,
+  getSemester,
 };
