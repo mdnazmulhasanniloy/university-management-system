@@ -8,7 +8,7 @@ import {
   academicSemesterCode,
   academicSemesterMonths,
   academicSemesterTitle,
-} from './academicSemesterConstant';
+} from './academicSemester.constant';
 import ApiError from '../../../errors/api.errors';
 
 const academicSemesterSchema = new Schema<IAcademicSemester>(

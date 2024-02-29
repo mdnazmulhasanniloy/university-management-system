@@ -11,7 +11,7 @@ import {
   IAcademicSemesterFilter,
   // IAcademicSemesterFilter,
 } from './academicSemester.interface';
-import { academicSemesterFilterableFields } from './academicSemesterConstant';
+import { academicSemesterFilterableFields } from './academicSemester.constant';
 
 const semesterCreate = CatchAsync(async (req: Request, res: Response) => {
   const data = req.body;
@@ -67,35 +67,27 @@ const getSemesterById = CatchAsync(async (req: Request, res: Response) => {
   });
 });
 
-/*
-const getAllSemesters = CatchAsync(
-  async (req: Request, res: Response, next: NextFunction) => {
-    try {
-      const paginationOptions = pick(req.query, paginationFields);
+//update semester
 
-      const result =
-        await AcademicSemesterService.getAllSemesters(paginationOptions);
+const updateSemester = CatchAsync(async (req: Request, res: Response) => {
+  const id = req.params.id;
+  const updatedData = req.body;
+  const result = await AcademicSemesterService.updateSemester(id, updatedData);
+  console.log('update semester', result);
+  if (!result) {
+    throw new ApiError(400, 'academic semester update failed');
+  }
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'academic semester updated successfully!',
+    data: result,
+  });
+});
 
-      if (!result || !result.data) {
-        throw new ApiError(404, 'Semester not found!');
-      }
-
-      sendResponse<IAcademicSemester[]>(res, {
-        statusCode: httpStatus?.OK,
-        success: true,
-        message: 'Semester retrieved successfully!',
-        data: result?.data,
-        meta: result?.meta,
-      });
-    } catch (error) {
-      next(error);
-    }
-  },
-);
-
-*/
 export const AcademicSemesterController = {
   semesterCreate,
   getAllSemesters,
   getSemesterById,
+  updateSemester,
 };

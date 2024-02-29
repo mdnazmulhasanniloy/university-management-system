@@ -9,6 +9,7 @@ import handleCastError from '../errors/handleCastError';
 // import { errorLogger } from '../shared/logger'
 
 // ErrorHandler.js
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const ErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
   // eslint-disable-next-line no-unused-expressions
   // config.nod_env === 'development'
@@ -69,7 +70,6 @@ const ErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
     errorMessages,
     stack,
   });
-  next();
 };
 
 export default ErrorHandler;
