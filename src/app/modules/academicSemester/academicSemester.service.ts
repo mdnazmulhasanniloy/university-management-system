@@ -7,13 +7,21 @@ import {
   IPaginationOption,
 } from './academicSemester.interface';
 import { AcademicSemester } from './academicSemester.models';
-import { academicSemesterSearchableFields } from './academicSemesterConstant';
+import {
+  academicSemesterSearchableFields,
+  academicSemesterTitleCodeMapper,
+} from './academicSemester.constant';
+import ApiError from '../../../errors/api.errors';
+import httpStatus from 'http-status';
 
 //create a new semester
 const createSemester = async (
-  data: IAcademicSemester,
+  payload: IAcademicSemester,
 ): Promise<IAcademicSemester | null> => {
-  const createdUser = await AcademicSemester.create(data);
+  if (academicSemesterTitleCodeMapper[payload.title] !== payload.code) {
+    throw new ApiError(httpStatus.BAD_REQUEST, 'invalid semester code');
+  }
+  const createdUser = await AcademicSemester.create(payload);
   return createdUser;
 };
 
@@ -76,8 +84,30 @@ const getSemesterById = async (
   const result = await AcademicSemester.findById(id);
   return result;
 };
+
+//update semester
+const updateSemester = async (
+  id: string,
+  payload: Partial<IAcademicSemester | null>,
+): Promise<IAcademicSemester | null> => {
+  if (
+    payload?.title &&
+    payload?.code &&
+    academicSemesterTitleCodeMapper[payload.title] !== payload.code
+  ) {
+    throw new ApiError(httpStatus.BAD_REQUEST, 'invalid semester code');
+  }
+  const updatedUser = await AcademicSemester.findOneAndUpdate(
+    { _id: id },
+    payload as Partial<IAcademicSemester>,
+    { new: true },
+  );
+  return updatedUser;
+};
+
 export const AcademicSemesterService = {
   createSemester,
   getAllSemesters,
   getSemesterById,
+  updateSemester,
 };
