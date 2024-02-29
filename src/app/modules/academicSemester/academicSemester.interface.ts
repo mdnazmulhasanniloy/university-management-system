@@ -34,7 +34,7 @@ export type IPaginationOption = {
   sortOrder?: 'asc' | 'desc';
 };
 
-export type IAcademicSemesterFilter = {
+export type IAcademicSearchFilter = {
   searchTerm?: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any;

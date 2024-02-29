@@ -1,16 +1,6 @@
 import { Response } from 'express';
+import { IApiResponse } from '../interfaces/common';
 
-type IApiResponse<T> = {
-  statusCode: number;
-  success: boolean;
-  message?: string | null;
-  meta?: {
-    page: number;
-    limit: number;
-    total: number;
-  };
-  data?: T | null;
-};
 const sendResponse = <T>(res: Response, data: IApiResponse<T>): void => {
   const responseData: IApiResponse<T> = {
     statusCode: data.statusCode,
