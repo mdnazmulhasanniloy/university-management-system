@@ -6,11 +6,21 @@ export type IGenericErrorResponse = {
   errorMessages: IGenericErrorMessage[];
 };
 
+export type IMeta = {
+  page: number;
+  limit: number;
+  total: number;
+};
+
 export type IGenericResponse<T> = {
-  meta?: {
-    page: number | null;
-    limit: number | null;
-    total: number | null;
-  };
+  meta?: IMeta;
   data: T;
+};
+
+export type IApiResponse<T> = {
+  statusCode: number;
+  success: boolean;
+  message?: string | null;
+  meta?: IMeta;
+  data?: T | null;
 };

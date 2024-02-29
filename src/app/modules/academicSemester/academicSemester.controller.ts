@@ -7,8 +7,8 @@ import httpStatus from 'http-status';
 import pick from '../../../shared/pick';
 import { paginationFields } from '../../../constants/pagination';
 import {
+  IAcademicSearchFilter,
   IAcademicSemester,
-  IAcademicSemesterFilter,
   // IAcademicSemesterFilter,
 } from './academicSemester.interface';
 import { academicSemesterFilterableFields } from './academicSemester.constant';
@@ -35,7 +35,7 @@ const getAllSemesters = CatchAsync(async (req: Request, res: Response) => {
   const paginationOptions = pick(req.query, paginationFields);
 
   const result = await AcademicSemesterService.getAllSemesters(
-    filters as IAcademicSemesterFilter,
+    filters as IAcademicSearchFilter,
     paginationOptions,
   );
 
@@ -85,9 +85,25 @@ const updateSemester = CatchAsync(async (req: Request, res: Response) => {
   });
 });
 
+//delete semester
+const deleteSemester = CatchAsync(async (req: Request, res: Response) => {
+  const id = req.params.id;
+  const result = await AcademicSemesterService.deleteSemester(id);
+  if (!result) {
+    throw new ApiError(400, 'academic semester delete failed');
+  }
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'academic semester deleted successfully!',
+    data: result,
+  });
+});
+
 export const AcademicSemesterController = {
   semesterCreate,
   getAllSemesters,
   getSemesterById,
   updateSemester,
+  deleteSemester,
 };

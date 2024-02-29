@@ -2,8 +2,8 @@ import { SortOrder } from 'mongoose';
 import { paginationHelper } from '../../../helpers/paginationHelper';
 import { IGenericResponse } from '../../../interfaces/common';
 import {
+  IAcademicSearchFilter,
   IAcademicSemester,
-  IAcademicSemesterFilter,
   IPaginationOption,
 } from './academicSemester.interface';
 import { AcademicSemester } from './academicSemester.models';
@@ -27,7 +27,7 @@ const createSemester = async (
 
 //get all semester
 const getAllSemesters = async (
-  filters: IAcademicSemesterFilter,
+  filters: IAcademicSearchFilter,
   paginationOptions: IPaginationOption,
 ): Promise<IGenericResponse<IAcademicSemester[]>> => {
   //searching
@@ -105,9 +105,19 @@ const updateSemester = async (
   return updatedUser;
 };
 
+//delete semester
+
+const deleteSemester = async (
+  id: string,
+): Promise<IAcademicSemester | null> => {
+  const result = await AcademicSemester.findByIdAndDelete(id);
+  return result;
+};
+
 export const AcademicSemesterService = {
   createSemester,
   getAllSemesters,
   getSemesterById,
   updateSemester,
+  deleteSemester,
 };
