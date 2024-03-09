@@ -22,6 +22,9 @@ const createSemester = async (
     throw new ApiError(httpStatus.BAD_REQUEST, 'invalid semester code');
   }
   const createdUser = await AcademicSemester.create(payload);
+  if (!createdUser) {
+    throw new ApiError(400, 'academic semester creation failed');
+  }
   return createdUser;
 };
 
@@ -71,6 +74,11 @@ const getAllSemesters = async (
     .limit(limit);
 
   const total = await AcademicSemester.countDocuments();
+
+  if (!result) {
+    throw new ApiError(httpStatus.NOT_FOUND, 'semester not found!');
+  }
+
   return {
     meta: { page: page, limit: limit, total: total },
     data: result,
@@ -82,6 +90,10 @@ const getSemesterById = async (
   id: string,
 ): Promise<IAcademicSemester | null> => {
   const result = await AcademicSemester.findById(id);
+
+  if (!result) {
+    throw new ApiError(httpStatus.NOT_FOUND, 'semester not found!');
+  }
   return result;
 };
 
@@ -97,12 +109,19 @@ const updateSemester = async (
   ) {
     throw new ApiError(httpStatus.BAD_REQUEST, 'invalid semester code');
   }
-  const updatedUser = await AcademicSemester.findOneAndUpdate(
+  const updatedSemester = await AcademicSemester.findOneAndUpdate(
     { _id: id },
     payload as Partial<IAcademicSemester>,
     { new: true },
   );
-  return updatedUser;
+
+  if (!updatedSemester) {
+    throw new ApiError(
+      httpStatus.BAD_REQUEST,
+      'academic semester update failed',
+    );
+  }
+  return updatedSemester;
 };
 
 //delete semester
@@ -111,6 +130,13 @@ const deleteSemester = async (
   id: string,
 ): Promise<IAcademicSemester | null> => {
   const result = await AcademicSemester.findByIdAndDelete(id);
+
+  if (!result) {
+    throw new ApiError(
+      httpStatus.BAD_REQUEST,
+      'academic semester delete failed',
+    );
+  }
   return result;
 };
 
