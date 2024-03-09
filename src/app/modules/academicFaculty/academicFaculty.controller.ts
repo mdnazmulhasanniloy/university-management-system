@@ -9,7 +9,7 @@ import { academicFacultyFilterableFields } from './academicFaculty.constant';
 import { IAcademicFaculty } from './academicFaculty.interface';
 
 const createFaculty = catchAsync(async (req: Request, res: Response) => {
-  const { ...academicFacultyData } = req.body;
+  const academicFacultyData = req.body;
   const result =
     await AcademicFacultyService.createFaculty(academicFacultyData);
   sendResponse<IAcademicFaculty>(res, {
