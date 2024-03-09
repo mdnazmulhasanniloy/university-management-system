@@ -4,16 +4,26 @@ import {
   IAcademicFaculty,
   IAcademicFacultyFilters,
 } from './academicFaculty.interface';
-import { AcademicFaculty } from './academicFaculty.models';
 import { IPaginationOption } from '../academicSemester/academicSemester.interface';
 import { paginationHelper } from '../../../helpers/paginationHelper';
 import { academicFacultySearchableFields } from './academicFaculty.constant';
+import httpStatus from 'http-status';
+import ApiError from '../../../errors/api.errors';
+import { AcademicFaculty } from './academicFaculty.models';
 
 const createFaculty = async (
   payload: IAcademicFaculty,
 ): Promise<IAcademicFaculty | null> => {
   const result = await AcademicFaculty.create(payload);
+  if (!result) {
+    throw new ApiError(
+      httpStatus.BAD_REQUEST,
+      'academic faculty create failed',
+    );
+  }
   return result;
+  // const result = await AcademicFaculty.create(payload);
+  // return result;
 };
 
 const getAllFaculties = async (
