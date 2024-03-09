@@ -1,6 +1,5 @@
 import { Request, Response } from 'express';
 import { AcademicSemesterService } from './academicSemester.service';
-import ApiError from '../../../errors/api.errors';
 import CatchAsync from '../../../shared/catchAsync';
 import sendResponse from '../../../shared/sendResponse';
 import httpStatus from 'http-status';
@@ -13,13 +12,10 @@ import {
 } from './academicSemester.interface';
 import { academicSemesterFilterableFields } from './academicSemester.constant';
 
+//create a semester
 const semesterCreate = CatchAsync(async (req: Request, res: Response) => {
   const data = req.body;
   const result = await AcademicSemesterService?.createSemester(data);
-
-  if (!result) {
-    throw new ApiError(400, 'academic semester creation failed');
-  }
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
@@ -39,10 +35,6 @@ const getAllSemesters = CatchAsync(async (req: Request, res: Response) => {
     paginationOptions,
   );
 
-  if (!result) {
-    throw new ApiError(400, 'semester not found!');
-  }
-
   sendResponse<IAcademicSemester[]>(res, {
     statusCode: httpStatus.OK,
     success: true,
@@ -56,9 +48,7 @@ const getAllSemesters = CatchAsync(async (req: Request, res: Response) => {
 const getSemesterById = CatchAsync(async (req: Request, res: Response) => {
   const id = req.params.id;
   const result = await AcademicSemesterService.getSemesterById(id);
-  if (!result) {
-    throw new ApiError(400, 'semester not found!');
-  }
+
   sendResponse(res, {
     statusCode: httpStatus?.OK,
     success: true,
@@ -73,10 +63,7 @@ const updateSemester = CatchAsync(async (req: Request, res: Response) => {
   const id = req.params.id;
   const updatedData = req.body;
   const result = await AcademicSemesterService.updateSemester(id, updatedData);
-  console.log('update semester', result);
-  if (!result) {
-    throw new ApiError(400, 'academic semester update failed');
-  }
+
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
@@ -89,9 +76,7 @@ const updateSemester = CatchAsync(async (req: Request, res: Response) => {
 const deleteSemester = CatchAsync(async (req: Request, res: Response) => {
   const id = req.params.id;
   const result = await AcademicSemesterService.deleteSemester(id);
-  if (!result) {
-    throw new ApiError(400, 'academic semester delete failed');
-  }
+
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
